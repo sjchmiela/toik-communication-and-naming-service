@@ -1,3 +1,5 @@
+package toik.communication;
+
 /**
  * Created by sjchmiela on 08.05.2017.
  */

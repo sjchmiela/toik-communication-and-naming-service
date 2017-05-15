@@ -1,3 +1,5 @@
+package toik.communication;
+
 import java.io.Serializable;
 
 /**
