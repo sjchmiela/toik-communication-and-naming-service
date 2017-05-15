@@ -6,7 +6,7 @@ import toik.communication.Receiver;
  * Created by Admin on 2017-05-15.
  */
 public abstract class WorkerNamingService {
-    private String workerName;
+    protected String workerName;
 
     public WorkerNamingService(String workerName){
         this.workerName = workerName;
@@ -16,6 +16,6 @@ public abstract class WorkerNamingService {
         return workerName;
     }
 
-    abstract String registerAgent();
-    abstract WorkerCommHandler registerReceiver(Receiver workerReceiver);
+    public abstract String registerAgent();
+    public abstract WorkerCommHandler registerReceiver(Receiver workerReceiver);
 }
