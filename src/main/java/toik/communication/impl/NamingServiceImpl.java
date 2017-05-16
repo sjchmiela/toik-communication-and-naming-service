@@ -24,6 +24,6 @@ public class NamingServiceImpl implements NamingService{
     public String getNewAgent(String workerName) {
         int curr_number = agents.get(workerName);
         agents.put(workerName, curr_number + 1);
-        return AGENT_BASE + Integer.toString(curr_number + 1);
+        return AGENT_BASE + Integer.toString(curr_number);
     }
 }
