@@ -8,10 +8,9 @@ import toik.communication.StarterCommunicationService;
  * Created by Admin on 2017-05-15.
  */
 public class StarterCommunicationServiceImpl implements StarterCommunicationService {
-
     private CommunicationHandler communicationHandler;
 
-    public StarterCommunicationServiceImpl(CommunicationHandler handler){
+    public StarterCommunicationServiceImpl(CommunicationHandler handler) {
         communicationHandler = handler;
     }
 
@@ -22,6 +21,6 @@ public class StarterCommunicationServiceImpl implements StarterCommunicationServ
 
     @Override
     public void send(String address, Message message) {
-        communicationHandler.getReceiver(address).action(message);
+        communicationHandler.getReceiver(address).action(message, address);
     }
 }

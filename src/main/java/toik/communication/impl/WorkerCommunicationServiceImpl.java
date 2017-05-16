@@ -7,21 +7,21 @@ import toik.communication.WorkerCommunicationService;
 /**
  * Created by Admin on 2017-05-15.
  */
-public class WorkerCommunicationServiceImpl implements WorkerCommunicationService{
+public class WorkerCommunicationServiceImpl implements WorkerCommunicationService {
     private CommunicationHandler communicationHandler;
 
-    public WorkerCommunicationServiceImpl(CommunicationHandler handler){
+    public WorkerCommunicationServiceImpl(CommunicationHandler handler) {
         communicationHandler = handler;
     }
 
     @Override
     public void sendToStarter(Message message) {
-        communicationHandler.getStarter().action(message);
+        communicationHandler.getStarter().action(message, communicationHandler.getStarterName());
     }
 
     @Override
     public void send(String address, Message message) {
-        communicationHandler.getReceiver(address).action(message);
+        communicationHandler.getReceiver(address).action(message, address);
     }
 
     @Override

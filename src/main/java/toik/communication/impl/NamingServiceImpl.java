@@ -9,21 +9,21 @@ import java.util.HashMap;
  */
 public class NamingServiceImpl implements NamingService{
     private HashMap<String, Integer> agents = new HashMap<>();
-    private int currWorker = 0;
+    private int workersCount = 0;
     private final String WORKER_BASE = "worker:";
-    private final String AGENT_BASE = "agent:";
+    private final String AGENT_BASE = ":agent:";
 
     @Override
-    public String getNewWorker() {
-        String worker_name = WORKER_BASE + Integer.toString(currWorker++);
-        agents.put(worker_name, 0);
-        return worker_name;
+    public String getNewWorkerName() {
+        String workerName = WORKER_BASE + Integer.toString(workersCount++);
+        agents.put(workerName, 0);
+        return workerName;
     }
 
     @Override
-    public String getNewAgent(String workerName) {
-        int curr_number = agents.get(workerName);
-        agents.put(workerName, curr_number + 1);
-        return AGENT_BASE + Integer.toString(curr_number + 1);
+    public String getNewAgentName(String workerName) {
+        int workersAgentsCount = agents.get(workerName);
+        agents.put(workerName, workersAgentsCount + 1);
+        return workerName + AGENT_BASE + Integer.toString(workersAgentsCount + 1);
     }
 }

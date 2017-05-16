@@ -6,5 +6,5 @@ package toik.communication;
 public interface WorkerCommunicationService {
     void sendToStarter(Message message);
     void send(String address, Message message);
-    void registerReceiver(String workerName, Receiver receiver);
+    void registerReceiver(String receiverName, Receiver receiver);
 }
